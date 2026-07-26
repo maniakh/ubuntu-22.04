@@ -68,7 +68,7 @@ cat > /etc/fail2ban/jail.local <<EOF
 [DEFAULT]
 bantime  = 1h
 findtime = 10m
-maxretry = 5
+maxretry = 50
 
 [sshd]
 enabled = true
