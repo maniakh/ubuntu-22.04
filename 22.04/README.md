@@ -1,28 +1,22 @@
-# Ubuntu 22.04 LTS Setup
+# ubuntu-setup
 
-## Usage
+Minimal basic server setup script for fresh Ubuntu 22.04 LTS installations.
+
+## Quick Start
 
 ```bash
+git clone https://github.com/maniakh/ubuntu-setup.git
+cd ubuntu-setup/22.04
 sudo bash setup.sh
 ```
 
-## What Gets Configured
+## What It Does
 
-| Component | Action |
-|-----------|--------|
-| System | Full update & upgrade |
-| Packages | curl, git, vim, htop, net-tools, unzip + more |
-| Timezone | Set to UTC |
-| UFW | Enabled — only SSH allowed inbound |
-| Fail2ban | Enabled — SSH brute-force protection (5 attempts = 1h ban) |
-| SSH | Root login disabled, max 3 auth tries |
-| Sysctl | Network hardening applied |
-| Auto-updates | Unattended security updates enabled |
+- Updates system packages (`apt update && apt upgrade`)
+- Installs basic essential tools (`curl`, `wget`, `git`, `vim`, `htop`, `unzip`, `ufw`)
+- Sets system timezone to UTC
+- Enables UFW firewall (Allows SSH only)
 
-## Post-Setup Checks
+## License
 
-```bash
-sudo ufw status verbose
-sudo fail2ban-client status sshd
-sudo systemctl status unattended-upgrades
-```
+MIT
