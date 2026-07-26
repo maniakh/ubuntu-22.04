@@ -1,29 +1,22 @@
 # ubuntu-setup
 
-Minimal basic server setup script and ISO download helpers for Ubuntu 22.04 LTS.
+Minimal basic server setup script and ISO direct downloaders for Ubuntu 22.04 LTS.
 
-## 1. ISO Download Options
+## Direct ISO Downloaders
 
-### Option A: Official Download (Public / Standard)
-Downloads official Ubuntu 22.04.5 Live Server ISO directly from Ubuntu mirrors:
-
+### Option 1: Official Ubuntu Server Mirror (Direct Link)
 ```bash
 bash 22.04/download-official.sh
 ```
 
-### Option B: Private Google Drive Download
-Downloads ISO from your private Google Drive file:
-
+### Option 2: Direct Google Drive Link
 ```bash
-# Public link or API token authorized download
-bash 22.04/download-drive.sh <YOUR_DRIVE_FILE_ID> [YOUR_API_ACCESS_TOKEN]
+bash 22.04/download-drive.sh <GOOGLE_DRIVE_FILE_ID>
 ```
 
 ---
 
-## 2. Server Setup (Post-Installation)
-
-Run after installing Ubuntu Server:
+## Basic Server Setup (Post-Install)
 
 ```bash
 git clone https://github.com/maniakh/ubuntu-setup.git
@@ -31,12 +24,11 @@ cd ubuntu-setup/22.04
 sudo bash setup.sh
 ```
 
-### What `setup.sh` Does
-- System update (`apt update && apt upgrade`)
-- Basic packages (`curl`, `wget`, `git`, `vim`, `htop`, `unzip`, `ufw`)
-- Timezone set to UTC
-- UFW Firewall active (SSH port allowed)
+### What `setup.sh` Configures
+- System Update (`apt update && apt upgrade`)
+- Essential Tools (`curl`, `wget`, `git`, `vim`, `htop`, `unzip`, `ufw`)
+- Timezone (UTC)
+- Firewall (UFW active, SSH allowed)
 
 ## License
-
 MIT
