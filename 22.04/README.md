@@ -1,22 +1,20 @@
 # ubuntu-setup
 
-Minimal basic server setup script and ISO direct downloaders for Ubuntu 22.04 LTS.
+Minimal basic server setup script and ISO downloaders for Ubuntu 22.04 LTS.
 
-## Direct ISO Downloaders
+## ISO Download
 
-### Option 1: Official Ubuntu Server Mirror (Direct Link)
+Users can download the official Ubuntu 22.04.5 Live Server ISO directly:
+
 ```bash
-bash 22.04/download-official.sh
-```
-
-### Option 2: Direct Google Drive Link
-```bash
-bash 22.04/download-drive.sh <GOOGLE_DRIVE_FILE_ID>
+bash 22.04/download-iso.sh
 ```
 
 ---
 
 ## Basic Server Setup (Post-Install)
+
+After installing Ubuntu Server:
 
 ```bash
 git clone https://github.com/maniakh/ubuntu-setup.git
