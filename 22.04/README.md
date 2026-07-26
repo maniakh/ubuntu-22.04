@@ -1,20 +1,22 @@
 # ubuntu-setup
 
-Minimal basic server setup script and ISO downloaders for Ubuntu 22.04 LTS.
+Minimal basic server setup script for fresh Ubuntu 22.04 LTS installations.
 
-## ISO Download
+## 1. Ubuntu 22.04 ISO Download
 
-Users can download the official Ubuntu 22.04.5 Live Server ISO directly:
+Download ISO directly:
+https://releases.ubuntu.com/22.04/ubuntu-22.04.5-live-server-amd64.iso
 
+Or via terminal:
 ```bash
-bash 22.04/download-iso.sh
+wget https://releases.ubuntu.com/22.04/ubuntu-22.04.5-live-server-amd64.iso
 ```
 
 ---
 
-## Basic Server Setup (Post-Install)
+## 2. Server Setup (Post-Installation)
 
-After installing Ubuntu Server:
+Run this script after installing Ubuntu Server:
 
 ```bash
 git clone https://github.com/maniakh/ubuntu-setup.git
