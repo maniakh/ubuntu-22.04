@@ -1,0 +1,44 @@
+#cloud-config
+autoinstall:
+  version: 1
+
+  # Locale & keyboard
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+
+  # Network (DHCP)
+  network:
+    network:
+      version: 2
+      ethernets:
+        enp0s3:
+          dhcp4: true
+
+  # Storage (erase disk, LVM)
+  storage:
+    layout:
+      name: lvm
+
+  # User
+  identity:
+    hostname: ubuntu-server
+    username: ubuntu
+    # Generate hash: openssl passwd -6 'yourpassword'
+    password: "$6$xyz$REPLACE_WITH_HASHED_PASSWORD"
+
+  # SSH
+  ssh:
+    install-server: true
+    allow-pw: true
+
+  # Packages
+  packages:
+    - curl
+    - git
+    - vim
+    - net-tools
+
+  # Post-install: run setup.sh
+  late-commands:
+    - curtin in-target -- bash -c "curl -fsSL https://raw.githubusercontent.com/maniakh/ubuntu-setup/main/22.04/setup.sh | bash"
